@@ -337,9 +337,8 @@ export const Checkout = ({
                       <CartPriceItem
                         title="Total"
                         price={formatPrice(total)}
-                        className="*:font-bold"
-                        titleClassName="text-base sm:text-xl"
-                        priceClassName="text-base sm:text-lg"
+                        titleClassName="text-base sm:text-xl font-bold"
+                        priceClassName="text-base sm:text-lg font-bold"
                       />
                     </footer>
                     {commissionCompletionTotal > 0 || futureInstallmentsWithoutTipsTotal > 0 ? (
@@ -402,17 +401,15 @@ export const Checkout = ({
 const CartPriceItem = ({
   title,
   price,
-  className,
   titleClassName,
   priceClassName,
 }: {
   title: React.ReactNode;
   price: string | number | null;
-  className?: string;
   titleClassName?: string;
   priceClassName?: string;
 }) => (
-  <div className={classNames("grid grid-flow-col justify-between gap-4", className)}>
+  <div className={classNames("grid grid-flow-col justify-between gap-4")}>
     <h4 className={classNames("inline-flex flex-wrap gap-2 text-sm sm:text-base", titleClassName)}>{title}</h4>
     <div className={classNames("text-base sm:text-lg", priceClassName)}>{price}</div>
   </div>
